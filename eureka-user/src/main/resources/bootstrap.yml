@@ -1,0 +1,50 @@
+#spring:
+#  application:
+#    name: Eureka-User
+#  cloud:
+#    config:
+#      label: master
+#      profile: dev
+#      uri: http://localhost:8888/
+#      name: config-user
+
+server:
+  port: 902
+spring:
+  application:
+    name: Eureka-User
+  datasource:
+    name: test
+    url: jdbc:mysql://10.50.50.15:3306/ZSTJ_WECHAT_TEST?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+    username: zstjapi
+    password: haozhuo2015
+    # 阿里druid数据源
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    filters: stat
+    maxActive: 20
+    initialSize: 1
+    maxWait: 60000
+    minIdle: 1
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: select 'x'
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    maxOpenPreparedStatements: 20
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:900/eureka/
+  instance:
+    instance-id: ${spring.cloud.client.ipAddress}:${server.port}
+
+#pagehelper分页插件
+pagehelper:
+    helperDialect: mysql
+    reasonable: true
+    supportMethodsArguments: true
+    params: count=countSql

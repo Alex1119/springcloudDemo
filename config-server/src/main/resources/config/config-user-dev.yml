@@ -1,0 +1,12 @@
+server:
+  port: 902
+spring:
+  application:
+    name: Eureka-User
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8880/eureka/
+  instance:
+    instance-id: ${spring.cloud.client.ipAddress}:${server.port}

@@ -1,0 +1,11 @@
+server:
+  port: 900
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    registerWithEureka: false #表明为注册中心
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
