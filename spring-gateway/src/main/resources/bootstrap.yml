@@ -23,3 +23,6 @@ zuul:
     apiOrder:
       path: /apiOrder/**
       serviceId: provider-order
+
+App:
+  SignVaild: true #验签开关
