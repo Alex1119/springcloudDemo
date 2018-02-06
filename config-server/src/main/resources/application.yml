@@ -12,7 +12,7 @@ spring:
 #        search-locations: classpath:/config/
      git:
        uri: https://github.com/Alex1119/springcloudDemo/
-       search-paths: config-server/src/main/java/com/example/configserver/userConfig
+       search-paths: config-server/src/main/java/com/example/configserver
 
 eureka:
   client:
