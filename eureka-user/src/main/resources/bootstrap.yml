@@ -1,11 +1,9 @@
 spring:
-  application:
-    name: Eureka-User
   cloud:
     config:
       label: master
       profile: dev
-      uri: http://localhost:8888/
+      uri: http://localhost:8881/
       name: config-user
 
 server:

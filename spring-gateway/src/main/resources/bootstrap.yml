@@ -1,28 +1,36 @@
-server:
+spring:
+  cloud:
+    config:
+      label: master
+      profile: dev
+      uri: http://localhost:8881/
+      name: config-gate
+
+erver:
   port: 901
 
-spring:
-  application:
-    name: spring-gateway
-#  监控中心
-#  zipkin:
-#    base-url: http://localhost:901
-
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://localhost:900/eureka/
-  instance:
-    instance-id: ${spring.cloud.client.ipAddress}:${server.port}
-
-zuul:
-  routes:
-    apiUser:
-      path: /apiUser/**
-      serviceId: provider-user
-    apiOrder:
-      path: /apiOrder/**
-      serviceId: provider-order
-
-App:
-  SignVaild: true #验签开关
+#spring:
+#  application:
+#    name: spring-gateway
+##  监控中心
+##  zipkin:
+##    base-url: http://localhost:901
+#
+#eureka:
+#  client:
+#    serviceUrl:
+#      defaultZone: http://localhost:900/eureka/
+#  instance:
+#    instance-id: ${spring.cloud.client.ipAddress}:${server.port}
+#
+#zuul:
+#  routes:
+#    apiUser:
+#      path: /apiUser/**
+#      serviceId: provider-user
+#    apiOrder:
+#      path: /apiOrder/**
+#      serviceId: provider-order
+#
+#App:
+#  SignVaild: true #验签开关
